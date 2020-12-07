@@ -1,7 +1,7 @@
 {
-    "name": "story-api",
+    "name": "shortstories-api",
     "version": "1.0.0",
-    "description": "",
+    "description": "An API that sends a random short story.",
     "main": "index.js",
     "scripts": {
         "start": "node index.js"
