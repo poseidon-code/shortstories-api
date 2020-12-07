@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 const app = express()
 const PORT = process.env.PORT || 5000
-const URI = `mongodb+srv://pritam0605:${process.env.PASSWORD}@stories.l6tlk.mongodb.net/stories?retryWrites=true&w=majority`
+const URI = `mongodb+srv://everyone:${process.env.EVERYONE}@stories.l6tlk.mongodb.net/stories?retryWrites=true&w=majority`
 
 app.use(cors())
 app.use(express.json())
@@ -29,18 +29,27 @@ const StoriesSchema = new Schema({
 
 const Stories = mongoose.model('stories', StoriesSchema)
 
-// api Routes
-app.get('/', (req, res) => {
-    Stories.countDocuments().exec((err, count) => {
+// Routes
+// get random story
+app.get('/', async (req, res) => {
+    try {
+        const count = await Stories.countDocuments()
         const random = Math.floor(Math.random() * count)
+        const story = await Stories.findOne().skip(random)
+        res.send(story)
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
 
-        Stories.findOne()
-            .skip(random)
-            .exec((err, data) => {
-                if (err) console.log(err)
-                else res.send(data)
-            })
-    })
+// get all stories
+app.get('/stories', async (req, res) => {
+    try {
+        const stories = await Stories.find({})
+        res.send(stories)
+    } catch (error) {
+        res.status(500).send(error)
+    }
 })
 
 app.listen(PORT, () => {
