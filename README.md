@@ -20,7 +20,7 @@ Returns a random short story from the database.
 
 **Request :**
 ```js
-axios.get('https://shortstories-api.herokuapp.com/').then(result => console.log(result))
+axios.get('https://shortstories-api.herokuapp.com/').then(result => console.log(result.data))
 ```
 **Response :**
 ```bash
@@ -38,7 +38,7 @@ Returns an array containing all the short stories from the database.
 
 **Request :**
 ```js
-axios.get('https://shortstories-api.herokuapp.com/stories').then(result => console.log(result))
+axios.get('https://shortstories-api.herokuapp.com/stories').then(result => console.log(result.data))
 ```
 **Response :**
 ```bash
