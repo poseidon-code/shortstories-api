@@ -21,7 +21,7 @@ Checkout the cool & minimal frontend of this API - [stories.io](https://storiesi
 ```ts
 {
   _id     : ObjectId    // id of the story
-  title   : String      // Titile of the story
+  title   : String      // Title of the story
   author  : String      // Author of the story
   story   : String      // Entire story (plain text)
   moral   : String      // Moral of the story
