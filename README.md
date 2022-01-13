@@ -1,23 +1,32 @@
-# shortstories-api
+<div align="center">
 
-`https://shortstories-api.herokuapp.com` \
+![shortstories-api](./ss-api.jpg)
+
+`https://shortstories-api.herokuapp.com`
+
+### &bull;
+
 An API that sends a random short story. This is a public API and no API key is required. \
 Checkout the cool & minimal frontend of this API - [stories.io](https://storiesio.netlify.app)
 
-```ts
-{
-  _id     : ObjectId
-  title   : String
-  author  : String
-  story   : String
-  moral   : String
-}
-```
+
 | ENDPOINT        | METHOD | DESCRIPTION |
 |-----------------|--------|-------------|
 | [`/`](#get-)               | **GET**  | Returns a random short story from the database |
 | [`/stories`](#get-stories) | **GET**  | Returns a list, containing all short stories from the database |
 
+</div>
+
+
+```ts
+{
+  _id     : ObjectId    // id of the story
+  title   : String      // Titile of the story
+  author  : String      // Author of the story
+  story   : String      // Entire story (plain text)
+  moral   : String      // Moral of the story
+}
+```
 ---
 
 ### GET `/`
