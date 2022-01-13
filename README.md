@@ -15,8 +15,8 @@ Checkout the cool & minimal frontend of this API - [stories.io](https://storiesi
 ```
 | ENDPOINT        | METHOD | DESCRIPTION |
 |-----------------|--------|-------------|
-| [`/`](#get-/)               | **GET**  | Returns a random short story from the database |
-| [`/stories`](#get-/stories) | **GET**  | Returns a list, containing all short stories from the database |
+| [`/`](#get-)               | **GET**  | Returns a random short story from the database |
+| [`/stories`](#get-stories) | **GET**  | Returns a list, containing all short stories from the database |
 
 ---
 
