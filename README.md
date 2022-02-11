@@ -2,7 +2,7 @@
 
 ![shortstories-api](./ss-api.jpg)
 
-`https://shortstories-api.herokuapp.com`
+[`https://shortstories-api.herokuapp.com`](https://shortstories-api.herokuapp.com)
 
 ### &bull;
 
