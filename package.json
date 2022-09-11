@@ -1,18 +1,21 @@
 {
     "name": "shortstories-api",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "An API that sends a random short story.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/poseidon-code/shortstories-api"
+    },
     "main": "index.js",
     "scripts": {
         "start": "node index.js"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "author": "poseidon-code",
+    "license": "MIT",
     "dependencies": {
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
-        "mongoose": "^5.11.4"
+        "mongoose": "^6.6.0"
     }
 }
