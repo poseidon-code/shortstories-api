@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  server:
+    build: .
+    image: poseidon-code/shortstories-api
+    container_name: c_shortstories-api
+    ports:
+      - '5000:5000'
+    volumes:
+      - .:/app
+      - ./node_modules
+    env_file:
+      - .env
