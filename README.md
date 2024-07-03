@@ -1,20 +1,8 @@
-> ## ⚠️ Important Notice
->
-> The Heroku server deployment will be stopped from 28th November, 2022 onwards, due to the discontinuation of Heroku Free Tier. As Short Stories API was also deployed on Heroku's Free tier, hence this API will also cease to run on Heroku, which is; [_~~`https://shortstories-api.herokuapp.com`~~_](https://shortstories-api.herokuapp.com).
->
-> Hence, I have decided to move this service to another platform, Render. Therefore, the URL to access the Short Stories API from now on will be : [**`https://shortstories-api.onrender.com`**](https://shortstories-api.onrender.com).
->
-> Users are requested to change Short Stories API URLs in their apps accordingly.
-
 <div align="center">
 
 ![shortstories-api](./ss-api.jpg)
 
-[~~`https://shortstories-api.herokuapp.com`~~](https://shortstories-api.herokuapp.com)
-
 [`https://shortstories-api.onrender.com`](https://shortstories-api.onrender.com)
-
-### &bull;
 
 An API that sends a random short story. This is a public API and no API key is required. \
 Checkout the cool & minimal frontend of this API - [stories.io](https://storiesio.netlify.app)
