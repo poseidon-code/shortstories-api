@@ -1,8 +1,9 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const helmet = require('helmet');
+import dotenv from "dotenv";
+dotenv.config();
+import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+import helmet from "helmet";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -11,15 +12,15 @@ const URI = `mongodb+srv://everyone:${process.env.EVERYONE}@stories.l6tlk.mongod
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-app.disable('x-powered-by');
+app.disable("x-powered-by");
 
 // Connect MongoDB Atlas' stories Database
 mongoose
     .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
-        console.log('Database Connected...');
+        console.log("Database Connected");
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 
 // Stories Schema
 const Schema = mongoose.Schema;
@@ -31,11 +32,11 @@ const StoriesSchema = new Schema({
     moral   : String,
 });
 
-const Stories = mongoose.model('stories', StoriesSchema);
+const Stories = mongoose.model("stories", StoriesSchema);
 
 // Routes
 // get random story
-app.get('/', async (_, res) => {
+app.get("/", async (_, res) => {
     try {
         const count = await Stories.countDocuments();
         const random = Math.floor(Math.random() * count);
@@ -47,7 +48,7 @@ app.get('/', async (_, res) => {
 });
 
 // get all stories
-app.get('/stories', async (_, res) => {
+app.get("/stories", async (_, res) => {
     try {
         const stories = await Stories.find({});
         res.send(stories);
