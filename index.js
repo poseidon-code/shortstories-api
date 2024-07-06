@@ -41,9 +41,14 @@ app.get("/", async (_, res) => {
         const count = await Stories.countDocuments();
         const random = Math.floor(Math.random() * count);
         const story = await Stories.findOne().skip(random);
-        res.send(story);
+        return res.status(200).send(story);
     } catch (error) {
-        res.status(500).send(error);
+        if (process.env.NODE_ENV == "development") {
+            console.error(error);
+            return res.status(500).send(error);
+        } else {
+            return res.status(500);
+        }
     }
 });
 
@@ -51,9 +56,14 @@ app.get("/", async (_, res) => {
 app.get("/stories", async (_, res) => {
     try {
         const stories = await Stories.find({});
-        res.send(stories);
+        return res.status(200).send(stories);
     } catch (error) {
-        res.status(500).send(error);
+        if (process.env.NODE_ENV == "development") {
+            console.error(error);
+            return res.status(500).send(error);
+        } else {
+            return res.status(500);
+        }
     }
 });
 
