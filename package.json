@@ -1,7 +1,8 @@
 {
     "name": "shortstories-api",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "An API that sends a random short story.",
+    "type": "module",
     "repository": {
         "type": "git",
         "url": "https://github.com/poseidon-code/shortstories-api"
