@@ -15,6 +15,7 @@ app.use(express.json());
 app.disable("x-powered-by");
 
 // Connect MongoDB Atlas' stories Database
+mongoose.set("strictQuery", true);
 mongoose
     .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
